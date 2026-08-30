@@ -1,1 +1,94 @@
+# Assignment 1
+# Operations on List, Tuple and Dictionary
 
+print("LIST")
+print()
+
+list1 = [10, 20, 30, 40]
+print("Original list:", list1)
+
+list1.append(50)
+print("After append:", list1)
+
+list1.insert(1, 15)
+print("After insert:", list1)
+
+list1.extend([60, 70])
+print("After extend:", list1)
+
+list1.remove(15)
+print("After remove:", list1)
+
+list1.pop()
+print("After pop:", list1)
+
+print("Index of 30:", list1.index(30))
+print("Count of 20:", list1.count(20))
+
+list1.sort()
+print("After sort:", list1)
+
+list1.reverse()
+print("After reverse:", list1)
+
+print("Length:", len(list1))
+
+
+print()
+print("TUPLE")
+print()
+
+tup1 = (1, 2, 3, 4, 5)
+print("Original tuple:", tup1)
+
+print("First element:", tup1[0])
+print("Slicing:", tup1[1:4])
+
+tup2 = tup1 + (6, 7)
+print("After add:", tup2)
+
+print("Repeat:", tup1 * 2)
+print("Count of 2:", tup1.count(2))
+print("Index of 4:", tup1.index(4))
+print("Length:", len(tup1))
+print("Min:", min(tup1))
+print("Max:", max(tup1))
+
+temp = list(tup1)
+temp.remove(3)
+tup1 = tuple(temp)
+print("After remove 3:", tup1)
+
+a, b, c = (10, 20, 30)
+print("Unpack:", a, b, c)
+
+x, y = 5, 9
+x, y = y, x
+print("After swap:", x, y)
+
+
+print()
+print("DICTIONARY")
+print()
+
+d = {"name": "Rahul", "roll": 101, "course": "CSE"}
+print("Original dictionary:", d)
+
+d["year"] = 2
+print("After add:", d)
+
+d["name"] = "Rahul Sharma"
+print("After update:", d)
+
+print("Get name:", d.get("name"))
+print("Keys:", d.keys())
+print("Values:", d.values())
+
+d.pop("roll")
+print("After pop:", d)
+
+del d["course"]
+print("After del:", d)
+
+d.clear()
+print("After clear:", d)
