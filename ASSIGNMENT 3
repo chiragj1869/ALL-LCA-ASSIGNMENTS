@@ -1,1 +1,30 @@
+# Assignment 3
+# Right-angled triangle using function
+
+def is_right(a, b, c):
+    if a * a + b * b == c * c:
+        return True
+    elif a * a + c * c == b * b:
+        return True
+    elif b * b + c * c == a * a:
+        return True
+    else:
+        return False
+
+print("RIGHT-ANGLED TRIANGLE")
+print()
+
+a = int(input("Enter first side: "))
+b = int(input("Enter second side: "))
+c = int(input("Enter third side: "))
+
+print()
+print("Sides:", a, b, c)
+print()
+
+if is_right(a, b, c):
+    print("The triangle is right-angled")
+
+else:
+    print("The triangle is not right-angled")
 
