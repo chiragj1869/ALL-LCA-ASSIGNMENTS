@@ -1,1 +1,61 @@
+# Assignment 4
+# Addition of two matrices using list and NumPy
 
+import numpy as np
+
+print("MATRIX ADDITION")
+print()
+
+print("Enter first matrix (2 x 2)")
+print()
+
+A = []
+for i in range(2):
+    row = []
+    for j in range(2):
+        n = int(input("Enter element: "))
+        row.append(n)
+    A.append(row)
+
+print()
+print("Enter second matrix (2 x 2)")
+print()
+
+B = []
+for i in range(2):
+    row = []
+    for j in range(2):
+        n = int(input("Enter element: "))
+        row.append(n)
+    B.append(row)
+
+print()
+print("Using LIST")
+print()
+
+print("First matrix:", A)
+print("Second matrix:", B)
+
+R = []
+for i in range(2):
+    row = []
+    for j in range(2):
+        row.append(A[i][j] + B[i][j])
+    R.append(row)
+
+print("Addition:", R)
+
+print()
+print("Using NumPy")
+print()
+
+a = np.array(A)
+b = np.array(B)
+print("First matrix:")
+print(a)
+print()
+print("Second matrix:")
+print(b)
+print()
+print("Addition:")
+print(a + b)
