@@ -1,1 +1,55 @@
+# Assignment 5
+# String operations and check a-z, A-Z, 0-9
+
+import re
+
+print("STRING OPERATIONS")
+print()
+
+s = "Python"
+print("Original string:", s)
+print("Length:", len(s))
+
+print()
+print("SLICING")
+print()
+print("First character:", s[0])
+print("Last character:", s[-1])
+print("s[0:3]:", s[0:3])
+print("s[::2]:", s[::2])
+
+print()
+print("UPDATE AND DELETE")
+print()
+print("String is immutable. We cannot change it in place.")
+print()
+
+new_s = "J" + s[1:]
+print("Update first letter:", new_s)
+print("Original still:", s)
+
+deleted = s[1:]
+print("Delete first letter:", deleted)
+print("Original still:", s)
+
+print()
+print("CHECK ONLY a-z, A-Z, 0-9")
+print()
+
+text = input("Enter a string: ")
+print()
+
+print("Using isalnum()")
+if text.isalnum():
+    print("Valid. Only letters and digits.")
+else:
+    print("Not valid. Other characters present.")
+
+print()
+print("Using regular expression")
+if re.fullmatch(r"[A-Za-z0-9]+", text):
+    print("Valid. Only letters and digits.")
+
+else:
+    print("Not valid. Other characters present.")
 
