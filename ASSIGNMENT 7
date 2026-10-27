@@ -1,0 +1,73 @@
+# Assignment 7
+# Data visualization using Line, Bar, Scatter and Heatmap
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+print("CREATE CSV")
+print()
+
+data = {
+    "Student": ["Amit", "Bhavna", "Chetan", "Diya", "Esha", "Farhan"],
+    "Maths": [75, 82, 68, 90, 72, 85],
+    "Python": [80, 78, 70, 92, 75, 88],
+    "Attendance": [85, 90, 78, 95, 80, 92],
+    "City": ["Pune", "Mumbai", "Pune", "Nashik", "Mumbai", "Pune"]
+}
+
+df = pd.DataFrame(data)
+df.to_csv("marks.csv", index=False)
+print("marks.csv created")
+
+print()
+print("READ CSV")
+print()
+df = pd.read_csv("marks.csv")
+print(df)
+
+print()
+print("LINE PLOT - Python marks")
+print()
+
+plt.plot(df["Student"], df["Python"], marker="o")
+plt.title("Line Plot - Python Marks")
+plt.xlabel("Student")
+plt.ylabel("Python Marks")
+plt.show()
+
+print()
+print("BAR PLOT - Maths marks")
+print()
+
+plt.bar(df["Student"], df["Maths"])
+plt.title("Bar Plot - Maths Marks")
+plt.xlabel("Student")
+plt.ylabel("Maths Marks")
+plt.show()
+
+print()
+print("SCATTER PLOT - Maths vs Python")
+print()
+
+plt.scatter(df["Maths"], df["Python"])
+plt.title("Scatter Plot - Maths vs Python")
+plt.xlabel("Maths Marks")
+plt.ylabel("Python Marks")
+plt.show()
+
+print()
+print("CORRELATION MATRIX")
+print()
+
+num = df[["Maths", "Python", "Attendance"]]
+corr = num.corr()
+print(corr)
+
+print()
+print("HEATMAP")
+print()
+
+sns.heatmap(corr, annot=True)
+plt.title("Heatmap - Correlation")
+plt.show()
