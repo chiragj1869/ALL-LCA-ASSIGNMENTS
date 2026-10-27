@@ -1,1 +1,77 @@
+# Assignment 6
+# Data preprocessing on CSV using Pandas
 
+import pandas as pd
+
+print("CREATE CSV")
+print()
+
+data = {
+    "name": ["Rahul", "Sneha", "Amit", "Rahul", "Priya", "Karan", "Sneha"],
+    "marks": [85, None, 90, 85, 78, 88, None],
+    "city": ["Pune", "Mumbai", "Pune", "Pune", None, "Nashik", "Mumbai"]
+}
+
+df = pd.DataFrame(data)
+df.to_csv("students.csv", index=False)
+print("students.csv created")
+
+print()
+print("READ CSV")
+print()
+
+df = pd.read_csv("students.csv")
+print(df)
+
+print()
+print("EXPLORE DATA")
+print()
+
+print("head()")
+print(df.head())
+print()
+print("info()")
+print(df.info())
+print()
+print("describe()")
+print(df.describe())
+
+print()
+print("MISSING VALUES")
+print()
+
+print(df.isnull().sum())
+
+print()
+print("Using dropna()")
+print()
+print(df.dropna())
+
+print()
+print("Using fillna()")
+print()
+
+df["marks"] = df["marks"].fillna(df["marks"].mean())
+df["city"] = df["city"].fillna("Unknown")
+print(df)
+
+print()
+print("DUPLICATE ROWS")
+print()
+
+print(df.duplicated())
+print()
+print("Using drop_duplicates()")
+print()
+df = df.drop_duplicates()
+print(df)
+
+print()
+print("USING loc[]")
+print()
+
+print("Students with marks > 80")
+print(df.loc[df["marks"] > 80])
+print()
+print("Name and marks of students from Pune")
+print(df.loc[df["city"] == "Pune", ["name", "marks"]])
